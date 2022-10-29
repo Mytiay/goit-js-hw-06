@@ -12,3 +12,24 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const makeGalaryCard = ({ url, alt }) => {
+  const listEl = document.createElement("li");
+  listEl.classList.add('list__options');
+
+  const imgEl = document.createElement("img");
+  imgEl.src = url;
+  imgEl.alt = alt;
+  console.log(imgEl);
+
+  listEl.append(imgEl);
+  return listEl;
+}
+
+
+const imgGalary = images.map(makeGalaryCard);
+  console.log(imgGalary);
+
+const ulElements = document.querySelector("ul");
+console.log(ulElements);  
+
