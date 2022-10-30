@@ -13,23 +13,12 @@ const images = [
   },
 ];
 
-const makeGalaryCard = ({ url, alt }) => {
-  const listEl = document.createElement("li");
-  listEl.classList.add('list__options');
 
-  const imgEl = document.createElement("img");
-  imgEl.src = url;
-  imgEl.alt = alt;
-  console.log(imgEl);
+const ulElement = document.querySelector("ul");
+console.log(ulElement)
 
-  listEl.append(imgEl);
-  return listEl;
-}
+const makeGalleryCard = images.map(image =>
+ `<li><img src= "${image.url}" alt= "${image.alt}" /></li>` ).join(' ');
+console.log(makeGalleryCard);
 
-
-const imgGalary = images.map(makeGalaryCard);
-  console.log(imgGalary);
-
-const ulElements = document.querySelector("ul");
-console.log(ulElements);  
-
+ulElement.insertAdjacentHTML('beforeend', makeGalleryCard);
