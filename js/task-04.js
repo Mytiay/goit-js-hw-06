@@ -7,11 +7,6 @@ console.log(addDecrement);
 const addIncrement = document.querySelector('button[data-action="increment"]');
 console.log(addIncrement);
 
-addDecrement.addEventListener('click', () => {
+addDecrement.addEventListener('click', );
 
-    
-});
-
-addIncrement.addEventListener("click", () => {
-
-});
+addIncrement.addEventListener("click", );
