@@ -1,11 +1,15 @@
-const input = document.querySelector("#validation-input");
-
-console.log(input.id);
-
-const onInputBlur = (event) => {
-if (event.currentTarget.value.length <= input.dataset.length) {
-  return input.id = validation-input.valid;
-}
+const refs = {
+  inputEl: document.querySelector("#validation-input"),
 };
+const letters = Number(refs.inputEl.dataset.length);
+console.log(letters);
 
-input.addEventListener('blur', onInputBlur);
+refs.inputEl.addEventListener("blur", onInputBlur);
+
+function onInputBlur(event) {
+  console.log(event.currentTarget.value.length);
+  
+  event.currentTarget.value.length !== letters
+    ? refs.inputEl.classList.add('invalid')
+    : refs.inputEl.classList.add('valid');
+}
