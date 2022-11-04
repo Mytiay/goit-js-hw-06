@@ -1,10 +1,20 @@
-const formData = new FormData(event.currentTarget);
-  const data = Object.fromEntries(formData.entries());
-  data.email = data.email.trim().toLowerCase();
-for (const [key, value] of Object.entries(data)) {
-    if (value !== '') continue;
-    elements[key].focus();
-    alert("Все поля должны быть заполнены!");
-    
-  }
-  console.log(data);
+const form = document.querySelector(".login-form");
+
+form.addEventListener('submit', onFormSubmit)
+
+function onFormSubmit(event) {
+  event.preventDefault();
+
+ const {
+   elements: { email, password },
+ } = event.currentTarget;
+
+ if (email.value === "" || password.value === "") {
+   return alert("все поля должны быть заполнены!");
+ }
+
+  console.log(
+    `Login: ${email.value}, Password: ${password.value}`
+  );
+  event.currentTarget.reset();
+};
