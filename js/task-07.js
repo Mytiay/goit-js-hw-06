@@ -2,5 +2,13 @@ const refs = {
     inputEl: document.querySelector("#font-size-control"),
     spanEl: document.querySelector('#text')
 };
-console.log(refs.inputEl);
-console.log(refs.spanEl);
+
+refs.inputEl.addEventListener("change", setInput);
+
+function setInput(event) {
+    
+    console.log(event.currentTarget.value);
+};
+
+
+
