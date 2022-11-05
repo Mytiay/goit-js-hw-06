@@ -6,7 +6,7 @@ const refs = {
 refs.inputEl.addEventListener("change", setInput);
 
 function setInput(event) {
-    refs.spanEl.style.fontSize === Number(event.currentTarget.value);
+    refs.spanEl.style.fontSize = `${event.currentTarget.value}px`;
     console.log(Number(event.currentTarget.value));
 };
 
