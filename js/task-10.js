@@ -28,3 +28,6 @@ const destroyBoxes = () => {
 
 refs.createEl.addEventListener('click', createBoxes);
 refs.removeEl.addEventListener('click', destroyBoxes);
+
+
+// еще не готово, я доделываю
