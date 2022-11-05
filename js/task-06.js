@@ -9,7 +9,11 @@ refs.inputEl.addEventListener("blur", onInputBlur);
 function onInputBlur(event) {
   console.log(event.currentTarget.value.length);
   
-  event.currentTarget.value.length !== letters
-    ? refs.inputEl.classList.add('invalid')
-    : refs.inputEl.classList.add('valid');
-}
+  if (event.currentTarget.value.length === letters) {
+    refs.inputEl.classList.remove('invalid');
+    refs.inputEl.classList.add('valid')
+  } else {
+    refs.inputEl.classList.remove('valid');
+    refs.inputEl.classList.add('invalid');
+  }
+};
