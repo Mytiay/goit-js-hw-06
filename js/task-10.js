@@ -11,6 +11,11 @@ function getRandomHexColor() {
 const getItem = () => `<div style = "background-color: ${getRandomHexColor()}; width: 30px; height: 30px;"></div>`;
 const items = ['item'];
 
+for (let i = 0; i < array.length; i+=1) {
+  const element = array[i];
+  
+}
+
 const createBoxes = (amount) => {
   refs.counter.value === amount;
   const box = items.map((item) => getItem(item)).join('');
