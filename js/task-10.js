@@ -1,6 +1,6 @@
 const refs = {
   boxEl: document.querySelector("#boxes"),
-  counter: document.querySelector("input"),
+  inputNumbers: document.querySelector("input"),
   createEl: document.querySelector("button[data-create]"),
   removeEl: document.querySelector("button[data-destroy"),
 };
@@ -8,26 +8,23 @@ const refs = {
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
-const getItem = () => `<div style = "background-color: ${getRandomHexColor()}; width: 30px; height: 30px;"></div>`;
-const items = ['item'];
-
-for (let i = 0; i < array.length; i+=1) {
-  const element = array[i];
-  
-}
-
 const createBoxes = (amount) => {
-  refs.counter.value === amount;
-  const box = items.map((item) => getItem(item)).join('');
-  refs.boxEl.insertAdjacentHTML('beforeend', box);
+  const addedEl = [];
+  for (let i = 0; i < amount; i += 1) {
+    const div = document.createElement("div");
+    div.style.height = `${30 + 10 * i}px`;
+    div.style.width = `${30 + 10 * i}px`;
+    div.style.background = getRandomHexColor();
+    addedEl.push(div);
+  }
+  return addedEl;
 };
-
 const destroyBoxes = () => {
-  refs.boxEl.innerHTML = '';
+  refs.boxEl.innerHTML = "";
 };
+refs.createEl.addEventListener("click", () => {
+  let addedBoxs = createBoxes(refs.inputNumbers.value);
+  refs.boxEl.append(...addedBoxs);
+});
+refs.removeEl.addEventListener("click", destroyBoxes);
 
-refs.createEl.addEventListener('click', createBoxes);
-refs.removeEl.addEventListener('click', destroyBoxes);
-
-
-// еще не готово, я доделываю
